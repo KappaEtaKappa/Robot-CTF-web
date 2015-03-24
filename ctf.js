@@ -21,6 +21,9 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+var util = require('util');
+var exec = require('child_process').exec;
+
 app.post('/hook', function(req, res) {  
 	var error = function(err, stderr){
 		console.log('stderr: ' + stderr);
