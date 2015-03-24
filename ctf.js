@@ -25,7 +25,7 @@ app.post('/hook', function(req, res) {
 	var error = function(err, stderr){
 		console.log('stderr: ' + stderr);
 		console.log('exec error: ' + err);
-		exec('git reset HEAD@{1}' function (error, stdout, stderr) {
+		exec('git reset HEAD@{1}', function (error, stdout, stderr) {
 			console.log('stdout: ' + stdout);
 			if (error !== null){
 				error(error, stderr);
